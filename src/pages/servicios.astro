@@ -1,4 +1,6 @@
+
 ---
+import '../styles/global.css';
 ---
 
 <!doctype html>
@@ -9,65 +11,114 @@
         <title>Servicios | Estructuras Metálicas J. Cruzado</title>
     </head>
 
-    <body>
-        <header>
-            <a href="/">Estructuras Metálicas J. Cruzado</a>
+    <body class="bg-blanco text-industrial font-principal">
+        <header class="bg-industrial text-blanco p-4">
+            <a
+                href="/"
+                class="text-blanco font-bold text-xl no-underline"
+            >
+                Estructuras Metálicas J. Cruzado
+            </a>
 
-            <nav aria-label="Principal">
-                <ul>
-                    <li><a href="/">Inicio</a></li>
-                    <li><a href="/servicios" aria-current="page">Servicios</a></li>
-                    <li><a href="/nosotros">Nosotros</a></li>
-                    <li><a href="/contacto">Contacto</a></li>
+            <nav class="mt-3" aria-label="Principal">
+                <ul class="list-none p-0">
+                    <li class="inline-block mr-4">
+                        <a href="/" class="text-blanco font-semibold no-underline">Inicio</a>
+                    </li>
+                    <li class="inline-block mr-4">
+                        <a
+                            href="/servicios"
+                            aria-current="page"
+                            class="text-acento font-bold no-underline"
+                        >
+                            Servicios
+                        </a>
+                    </li>
+                    <li class="inline-block mr-4">
+                        <a href="/nosotros" class="text-blanco font-semibold no-underline">Nosotros</a>
+                    </li>
+                    <li class="inline-block">
+                        <a href="/contacto" class="text-blanco font-semibold no-underline">Contacto</a>
+                    </li>
                 </ul>
             </nav>
         </header>
 
-        <main>
-            <section>
-                <h1>Nuestros servicios</h1>
-                <p>Conoce nuestros trabajos de estructuras metálicas.</p>
+        <main class="max-w-4xl mx-auto p-6">
+            <section class="mb-8">
+                <h1 class="text-acento text-3xl font-bold mb-3">
+                    Nuestros servicios
+                </h1>
+                <p class="text-lg">
+                    Conoce nuestros trabajos de estructuras metálicas.
+                </p>
             </section>
 
-            <section>
-                <h2>Fabricación de estructuras metálicas</h2>
-                <p>Elaboración de estructuras metálicas según las necesidades de cada proyecto.</p>
+            <section class="mb-8">
+                <h2 class="text-acento text-2xl font-bold mb-3">
+                    Fabricación de estructuras metálicas
+                </h2>
+                <p>
+                    Elaboración de estructuras metálicas según las necesidades de cada proyecto.
+                </p>
             </section>
 
-            <section>
-                <h2>Trabajos de metal</h2>
-                <p>Soluciones de fabricación y trabajo con metal para diferentes proyectos.</p>
+            <section class="mb-8">
+                <h2 class="text-acento text-2xl font-bold mb-3">
+                    Trabajos de metal
+                </h2>
+                <p>
+                    Soluciones de fabricación y trabajo con metal para diferentes proyectos.
+                </p>
             </section>
 
-            <section>
-                <h2>Precios de los servicios</h2>
+            <section class="mb-8">
+                <h2 class="text-acento text-2xl font-bold mb-3">
+                    Precios de los servicios
+                </h2>
 
-                <table>
-                    <caption>Servicios y precios</caption>
+                <table class="w-full border-collapse text-left">
+                    <caption class="font-bold text-industrial mb-3">
+                        Servicios y precios
+                    </caption>
 
-                    <thead>
+                    <thead class="bg-industrial text-blanco">
                         <tr>
-                            <th scope="col">Servicio</th>
-                            <th scope="col">Precio</th>
+                            <th scope="col" class="border border-metal p-3">
+                                Servicio
+                            </th>
+                            <th scope="col" class="border border-metal p-3">
+                                Precio
+                            </th>
                         </tr>
                     </thead>
 
                     <tbody>
                         <tr>
-                            <td>Fabricación de estructuras metálicas</td>
-                            <td>A cotizar</td>
+                            <td class="border border-metal p-3">
+                                Fabricación de estructuras metálicas
+                            </td>
+                            <td class="border border-metal p-3">
+                                A cotizar
+                            </td>
                         </tr>
-                        <tr>
-                            <td>Trabajos de metal</td>
-                            <td>A cotizar</td>
+                        <tr class="bg-metal/10">
+                            <td class="border border-metal p-3">
+                                Trabajos de metal
+                            </td>
+                            <td class="border border-metal p-3">
+                                A cotizar
+                            </td>
                         </tr>
                     </tbody>
                 </table>
             </section>
         </main>
 
-        <footer>
-            <p>Estructuras Metálicas J. Cruzado</p>
+        <footer class="bg-industrial text-blanco text-center p-6">
+            <p class="font-bold">
+                Estructuras Metálicas J. Cruzado
+            </p>
             <p>Rioja, San Martín, Perú</p>
         </footer>
     </body>

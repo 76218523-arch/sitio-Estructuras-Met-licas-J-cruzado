@@ -1,0 +1,11 @@
+
+@import "tailwindcss";
+
+@theme {
+    --color-industrial: #1F2937;
+    --color-metal: #374151;
+    --color-acento: #F59E0B;
+    --color-blanco: #FFFFFF;
+
+    --font-principal: Arial, sans-serif;
+}
