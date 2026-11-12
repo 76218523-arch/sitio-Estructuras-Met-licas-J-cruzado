@@ -1,39 +1,21 @@
 ---
-import { Image } from 'astro:assets';
-import fotoEstructuras from '../assets/estructuras.jpg.jpeg';
-import fotoTrabajos from '../assets/trabajos.jpg.jpeg';
-import fotoTaller from '../assets/taller.jpg.jpeg';
-import '../styles/global.css';
+import Layout from '../layouts/Layout.astro';
+import Tarjeta from '../components/Tarjeta.astro';
+import { productos } from '../data/productos.js';
 ---
-<!doctype html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <title>Servicios | Estructuras Metálicas J. Cruzado</title>
-    <meta name="description" content="Servicios de fabricación y trabajos de metal de Estructuras Metálicas J. Cruzado." />
-</head>
-<body class="bg-blanco text-industrial font-principal">
-<header class="bg-industrial text-blanco">
-    <div class="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6">
-        <a href="/" class="text-xl font-bold text-blanco no-underline sm:text-2xl">Estructuras Metálicas J. Cruzado</a>
-        <nav aria-label="Menú principal">
-            <ul class="flex flex-wrap gap-x-5 gap-y-2 p-0">
-                <li><a href="/"  class="font-semibold no-underline text-blanco hover:text-acento">Inicio</a></li>
-                <li><a href="/servicios" aria-current="page" class="font-semibold no-underline text-acento underline underline-offset-4">Servicios</a></li>
-                <li><a href="/nosotros"  class="font-semibold no-underline text-blanco hover:text-acento">Nosotros</a></li>
-                <li><a href="/contacto"  class="font-semibold no-underline text-blanco hover:text-acento">Contacto</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+<Layout title="Servicios | Estructuras Metálicas J. Cruzado" description="Servicios de fabricación y trabajos de metal de Estructuras Metálicas J. Cruzado." pagina="/servicios">
 <main class="mx-auto max-w-6xl px-4 py-10 sm:px-6 md:py-16">
     <section class="mb-10"><h1 class="mb-3 text-4xl font-bold text-acento sm:text-5xl">Nuestros servicios</h1><p class="text-lg">Conoce nuestros trabajos de fabricación e instalación de estructuras metálicas en Rioja, San Martín.</p></section>
-    <section class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        <article class="flex flex-col overflow-hidden rounded-2xl bg-metal/10 shadow-md"><Image src={fotoEstructuras} alt="Estructura metálica utilizada en construcción" width={640} class="aspect-[4/3] w-full object-cover" /><div class="flex flex-1 flex-col gap-3 p-5"><h2 class="text-xl font-bold text-industrial">Fabricación de estructuras metálicas</h2><p>Elaboración de estructuras de metal de acuerdo con las medidas y necesidades del proyecto.</p><a href="/contacto" class="mt-auto font-bold underline">Cotiza por WhatsApp</a></div></article>
-        <article class="flex flex-col overflow-hidden rounded-2xl bg-metal/10 shadow-md"><Image src={fotoTrabajos} alt="Piezas y trabajos metálicos fabricados" width={640} class="aspect-[4/3] w-full object-cover" /><div class="flex flex-1 flex-col gap-3 p-5"><h2 class="text-xl font-bold text-industrial">Trabajos de metal</h2><p>Fabricación y acondicionamiento de piezas metálicas para diferentes usos.</p><a href="/contacto" class="mt-auto font-bold underline">Cotiza por WhatsApp</a></div></article>
-        <article class="flex flex-col overflow-hidden rounded-2xl bg-metal/10 shadow-md"><Image src={fotoTaller} alt="Taller equipado para realizar trabajos de metal" width={640} class="aspect-[4/3] w-full object-cover" /><div class="flex flex-1 flex-col gap-3 p-5"><h2 class="text-xl font-bold text-industrial">Proyectos personalizados</h2><p>Revisamos los requerimientos del cliente para orientar la propuesta y cotización.</p><a href="/contacto" class="mt-auto font-bold underline">Cotiza por WhatsApp</a></div></article>
+    <section class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {productos.map((producto) => (
+            <Tarjeta
+                nombre={producto.nombre}
+                descripcion={producto.descripcion}
+                precio={producto.precio}
+                foto={producto.foto}
+                alt={producto.alt}
+            />
+        ))}
     </section>
     <section class="mt-12">
         <h2 class="mb-4 text-2xl font-bold text-acento">Precios de los servicios</h2>
@@ -51,11 +33,4 @@ import '../styles/global.css';
         </div>
     </section>
 </main>
-<footer class="bg-industrial text-blanco">
-    <div class="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-6 sm:px-6 md:flex-row md:items-start md:justify-between md:gap-8">
-        <div><p class="font-bold">Estructuras Metálicas J. Cruzado</p><address class="not-italic">Rioja, San Martín, Perú.</address></div>
-        <p class="text-sm">Fabricación y trabajos de estructuras metálicas.</p>
-    </div>
-</footer>
-</body>
-</html>
+</Layout>

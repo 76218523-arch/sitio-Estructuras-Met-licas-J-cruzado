@@ -1,0 +1,34 @@
+---
+const { pagina = '/' } = Astro.props;
+const enlaces = [
+    { href: '/', texto: 'Inicio' },
+    { href: '/servicios', texto: 'Servicios' },
+    { href: '/nosotros', texto: 'Nosotros' },
+    { href: '/contacto', texto: 'Contacto' },
+];
+---
+<header class="bg-industrial text-blanco">
+    <div class="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+        <a href="/" class="text-xl font-bold text-blanco no-underline sm:text-2xl">Estructuras Metálicas J. Cruzado</a>
+        <nav aria-label="Menú principal">
+            <ul class="flex flex-wrap gap-x-5 gap-y-2 p-0">
+                {enlaces.map((enlace) => (
+                    <li>
+                        <a
+                            href={enlace.href}
+                            aria-current={pagina === enlace.href ? 'page' : undefined}
+                            class:list={[
+                                'font-semibold no-underline hover:text-acento',
+                                pagina === enlace.href
+                                    ? 'text-acento underline underline-offset-4'
+                                    : 'text-blanco',
+                            ]}
+                        >
+                            {enlace.texto}
+                        </a>
+                    </li>
+                ))}
+            </ul>
+        </nav>
+    </div>
+</header>

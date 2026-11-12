@@ -1,33 +1,11 @@
 ---
+import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
 import fotoTaller from '../assets/taller.jpg.jpeg';
 import fotoEstructuras from '../assets/estructuras.jpg.jpeg';
 import fotoTrabajos from '../assets/trabajos.jpg.jpeg';
-import '../styles/global.css';
 ---
-<!doctype html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <title>Nosotros | Estructuras Metálicas J. Cruzado</title>
-    <meta name="description" content="Conoce Estructuras Metálicas J. Cruzado, negocio ubicado en Rioja, San Martín." />
-</head>
-<body class="bg-blanco text-industrial font-principal">
-<header class="bg-industrial text-blanco">
-    <div class="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6">
-        <a href="/" class="text-xl font-bold text-blanco no-underline sm:text-2xl">Estructuras Metálicas J. Cruzado</a>
-        <nav aria-label="Menú principal">
-            <ul class="flex flex-wrap gap-x-5 gap-y-2 p-0">
-                <li><a href="/"  class="font-semibold no-underline text-blanco hover:text-acento">Inicio</a></li>
-                <li><a href="/servicios"  class="font-semibold no-underline text-blanco hover:text-acento">Servicios</a></li>
-                <li><a href="/nosotros" aria-current="page" class="font-semibold no-underline text-acento underline underline-offset-4">Nosotros</a></li>
-                <li><a href="/contacto"  class="font-semibold no-underline text-blanco hover:text-acento">Contacto</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+<Layout title="Nosotros | Estructuras Metálicas J. Cruzado" description="Conoce Estructuras Metálicas J. Cruzado, negocio ubicado en Rioja, San Martín." pagina="/nosotros">
 <main class="mx-auto max-w-6xl px-4 py-10 sm:px-6 md:py-16">
     <section class="mb-10 grid gap-8 md:grid-cols-2 md:items-center md:gap-10">
         <div><h1 class="mb-4 text-4xl font-bold text-acento sm:text-5xl">Nosotros</h1><p class="mb-4 text-lg">Somos Estructuras Metálicas J. Cruzado, un negocio ubicado en Rioja, San Martín, dedicado a la fabricación e instalación de estructuras metálicas.</p><p>Buscamos brindar soluciones de acuerdo con las necesidades de cada cliente, cuidando la planificación de cada trabajo y las características del proyecto.</p></div>
@@ -45,11 +23,4 @@ import '../styles/global.css';
         </div>
     </section>
 </main>
-<footer class="bg-industrial text-blanco">
-    <div class="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-6 sm:px-6 md:flex-row md:items-start md:justify-between md:gap-8">
-        <div><p class="font-bold">Estructuras Metálicas J. Cruzado</p><address class="not-italic">Rioja, San Martín, Perú.</address></div>
-        <p class="text-sm">Fabricación y trabajos de estructuras metálicas.</p>
-    </div>
-</footer>
-</body>
-</html>
+</Layout>

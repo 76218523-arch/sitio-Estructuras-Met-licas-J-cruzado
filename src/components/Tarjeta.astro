@@ -1,0 +1,14 @@
+---
+import { Image } from 'astro:assets';
+
+const { nombre, descripcion, precio, foto, alt } = Astro.props;
+---
+<article class="flex flex-col overflow-hidden rounded-2xl bg-metal/10 shadow-md">
+    <Image src={foto} alt={alt} width={640} class="aspect-[4/3] w-full object-cover" />
+    <div class="flex flex-1 flex-col gap-3 p-5">
+        <h2 class="text-xl font-bold text-industrial">{nombre}</h2>
+        <p>{descripcion}</p>
+        <p class="font-bold text-acento">{precio}</p>
+        <a href="/contacto" class="mt-auto font-bold text-industrial underline underline-offset-4">Solicitar cotización</a>
+    </div>
+</article>

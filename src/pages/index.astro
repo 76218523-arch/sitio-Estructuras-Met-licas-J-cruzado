@@ -1,33 +1,11 @@
 ---
+import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
 import fotoTaller from '../assets/taller.jpg.jpeg';
 import fotoEstructuras from '../assets/estructuras.jpg.jpeg';
 import fotoTrabajos from '../assets/trabajos.jpg.jpeg';
-import '../styles/global.css';
 ---
-<!doctype html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <title>Inicio | Estructuras Metálicas J. Cruzado</title>
-    <meta name="description" content="Conoce los servicios y trabajos de Estructuras Metálicas J. Cruzado en Rioja, San Martín." />
-</head>
-<body class="bg-blanco text-industrial font-principal">
-<header class="bg-industrial text-blanco">
-    <div class="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6">
-        <a href="/" class="text-xl font-bold text-blanco no-underline sm:text-2xl">Estructuras Metálicas J. Cruzado</a>
-        <nav aria-label="Menú principal">
-            <ul class="flex flex-wrap gap-x-5 gap-y-2 p-0">
-                <li><a href="/" aria-current="page" class="font-semibold no-underline text-acento underline underline-offset-4">Inicio</a></li>
-                <li><a href="/servicios"  class="font-semibold no-underline text-blanco hover:text-acento">Servicios</a></li>
-                <li><a href="/nosotros"  class="font-semibold no-underline text-blanco hover:text-acento">Nosotros</a></li>
-                <li><a href="/contacto"  class="font-semibold no-underline text-blanco hover:text-acento">Contacto</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+<Layout title="Inicio | Estructuras Metálicas J. Cruzado" description="Conoce los servicios y trabajos de Estructuras Metálicas J. Cruzado en Rioja, San Martín." pagina="/">
 <main class="mx-auto max-w-6xl px-4 py-10 sm:px-6 md:py-16">
     <section class="grid gap-8 md:grid-cols-2 md:items-center md:gap-10">
         <div>
@@ -64,11 +42,4 @@ import '../styles/global.css';
         <a href="/contacto" class="mt-4 inline-block rounded-lg bg-acento px-5 py-3 font-bold text-industrial no-underline">Contáctanos</a>
     </section>
 </main>
-<footer class="bg-industrial text-blanco">
-    <div class="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-6 sm:px-6 md:flex-row md:items-start md:justify-between md:gap-8">
-        <div><p class="font-bold">Estructuras Metálicas J. Cruzado</p><address class="not-italic">Rioja, San Martín, Perú.</address></div>
-        <p class="text-sm">Fabricación y trabajos de estructuras metálicas.</p>
-    </div>
-</footer>
-</body>
-</html>
+</Layout>
