@@ -1,244 +1,74 @@
-
 ---
 import { Image } from 'astro:assets';
-
 import fotoTaller from '../assets/taller.jpg.jpeg';
 import fotoEstructuras from '../assets/estructuras.jpg.jpeg';
 import fotoTrabajos from '../assets/trabajos.jpg.jpeg';
 import '../styles/global.css';
 ---
-
 <!doctype html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width" />
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <title>Inicio | Estructuras Metálicas J. Cruzado</title>
-
-        <meta
-            name="description"
-            content="Conoce los servicios de Estructuras Metálicas J. Cruzado en Rioja, San Martín."
-        />
-    </head>
-
-    <body>
-        <header class="bg-industrial text-blanco p-4">
-            <a href="/" class="text-blanco font-bold text-xl">
-                Estructuras Metálicas J. Cruzado
-            </a>
-
-            <nav class="mt-3" aria-label="Menú principal">
-                <ul>
-                    <li><a href="/" aria-current="page">Inicio</a></li>
-                    <li><a href="/servicios">Servicios</a></li>
-                    <li><a href="/nosotros">Nosotros</a></li>
-                    <li><a href="/contacto">Contacto</a></li>
-                </ul>
-            </nav>
-        </header>
-
-        <main>
-            <section>
-                <h1>Estructuras Metálicas J. Cruzado</h1>
-
-                <p>
-                    Bienvenidos a Estructuras Metálicas J. Cruzado,
-                    un negocio dedicado a los trabajos de fabricación
-                    de estructuras metálicas.
-                </p>
-
-                <p class="font-bold">
-                    Ofrecemos soluciones para proyectos que requieren
-                    trabajos con estructuras de metal.
-                </p>
-
-                <p>
-                    Nuestro objetivo es conocer las necesidades de
-                    cada cliente y ofrecer alternativas adecuadas
-                    para su proyecto.
-                </p>
-            </section>
-
-            <section>
-                <h2>Nuestros servicios</h2>
-
-                <p>
-                    Conoce nuestros servicios de fabricación de
-                    estructuras metálicas y trabajos de metal.
-                </p>
-
-                <p>
-                    <a href="/servicios">Ver nuestros servicios</a>
-                </p>
-
-                <p>
-                    ¿Necesitas información para tu proyecto?
-                    Visita nuestra página de contacto.
-                </p>
-
-                <p>
-                    <a href="/contacto">Contáctanos</a>
-                </p>
-            </section>
-
-            <section class="galeria">
-                <h2>Nuestros trabajos realizados</h2>
-
-                <p>
-                    Conoce algunas imágenes relacionadas con
-                    nuestro trabajo en estructuras metálicas.
-                </p>
-
-                <div class="contenedor-fotos">
-                    <figure>
-                        <Image
-                            src={fotoTaller}
-                            alt="Taller de trabajo de estructuras metálicas"
-                            width={640}
-                        />
-                        <figcaption>Nuestro taller</figcaption>
-                    </figure>
-
-                    <figure>
-                        <Image
-                            src={fotoEstructuras}
-                            alt="Estructuras metálicas para construcciones"
-                            width={640}
-                        />
-                        <figcaption>Estructuras metálicas</figcaption>
-                    </figure>
-
-                    <figure>
-                        <Image
-                            src={fotoTrabajos}
-                            alt="Trabajos de fabricación e instalación metálica"
-                            width={640}
-                        />
-                        <figcaption>Trabajos realizados</figcaption>
-                    </figure>
-                </div>
-            </section>
-        </main>
-
-        <footer>
-            <p>Estructuras Metálicas J. Cruzado</p>
-            <address>Rioja, San Martín, Perú.</address>
-        </footer>
-    </body>
+    <title>Inicio | Estructuras Metálicas J. Cruzado</title>
+    <meta name="description" content="Conoce los servicios y trabajos de Estructuras Metálicas J. Cruzado en Rioja, San Martín." />
+</head>
+<body class="bg-blanco text-industrial font-principal">
+<header class="bg-industrial text-blanco">
+    <div class="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+        <a href="/" class="text-xl font-bold text-blanco no-underline sm:text-2xl">Estructuras Metálicas J. Cruzado</a>
+        <nav aria-label="Menú principal">
+            <ul class="flex flex-wrap gap-x-5 gap-y-2 p-0">
+                <li><a href="/" aria-current="page" class="font-semibold no-underline text-acento underline underline-offset-4">Inicio</a></li>
+                <li><a href="/servicios"  class="font-semibold no-underline text-blanco hover:text-acento">Servicios</a></li>
+                <li><a href="/nosotros"  class="font-semibold no-underline text-blanco hover:text-acento">Nosotros</a></li>
+                <li><a href="/contacto"  class="font-semibold no-underline text-blanco hover:text-acento">Contacto</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<main class="mx-auto max-w-6xl px-4 py-10 sm:px-6 md:py-16">
+    <section class="grid gap-8 md:grid-cols-2 md:items-center md:gap-10">
+        <div>
+            <p class="mb-2 font-bold uppercase tracking-wide text-acento">Soluciones en metal</p>
+            <h1 class="mb-4 text-4xl font-bold leading-tight text-industrial sm:text-5xl lg:text-6xl">Estructuras Metálicas J. Cruzado</h1>
+            <p class="mb-4 text-lg">Somos un negocio dedicado a la fabricación e instalación de estructuras metálicas para viviendas, negocios y diferentes proyectos.</p>
+            <p class="mb-6">Trabajamos para conocer las necesidades de cada cliente y ofrecer alternativas adecuadas para su proyecto.</p>
+            <a href="https://wa.me/51904888946" class="inline-block rounded-lg bg-acento px-6 py-3 font-bold text-industrial no-underline hover:opacity-90">Cotiza por WhatsApp</a>
+        </div>
+        <Image src={fotoTaller} alt="Taller donde se realizan trabajos de estructuras metálicas" width={900} class="aspect-[4/3] w-full rounded-2xl object-cover shadow-lg" />
+    </section>
+    <section class="mt-14">
+        <div class="flex flex-wrap items-end justify-between gap-4">
+            <div><h2 class="text-3xl font-bold text-acento">Nuestros servicios</h2><p class="mt-2">Conoce algunos de los trabajos que realizamos.</p></div>
+            <a href="/servicios" class="font-bold text-industrial underline underline-offset-4">Ver todos los servicios</a>
+        </div>
+        <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <article class="flex flex-col overflow-hidden rounded-2xl bg-metal/10 shadow-md">
+                <Image src={fotoEstructuras} alt="Estructuras metálicas para diferentes construcciones" width={640} class="aspect-[4/3] w-full object-cover" />
+                <div class="flex flex-1 flex-col gap-3 p-5"><h3 class="text-xl font-bold text-industrial">Fabricación de estructuras</h3><p>Elaboración de estructuras metálicas según las características de cada proyecto.</p><a href="/contacto" class="mt-auto font-bold text-industrial underline">Solicitar información</a></div>
+            </article>
+            <article class="flex flex-col overflow-hidden rounded-2xl bg-metal/10 shadow-md">
+                <Image src={fotoTrabajos} alt="Trabajo de fabricación e instalación de piezas metálicas" width={640} class="aspect-[4/3] w-full object-cover" />
+                <div class="flex flex-1 flex-col gap-3 p-5"><h3 class="text-xl font-bold text-industrial">Trabajos de metal</h3><p>Soluciones de metal para viviendas, negocios y otros espacios.</p><a href="/contacto" class="mt-auto font-bold text-industrial underline">Solicitar información</a></div>
+            </article>
+            <article class="flex flex-col overflow-hidden rounded-2xl bg-metal/10 shadow-md">
+                <Image src={fotoTaller} alt="Área de trabajo del taller de estructuras metálicas" width={640} class="aspect-[4/3] w-full object-cover" />
+                <div class="flex flex-1 flex-col gap-3 p-5"><h3 class="text-xl font-bold text-industrial">Proyectos a medida</h3><p>Evaluamos las necesidades del cliente para preparar una cotización.</p><a href="/contacto" class="mt-auto font-bold text-industrial underline">Solicitar información</a></div>
+            </article>
+        </div>
+    </section>
+    <section class="mt-14 rounded-2xl bg-industrial p-6 text-blanco sm:p-8">
+        <h2 class="text-2xl font-bold text-acento">¿Tienes un proyecto?</h2><p class="mt-2">Comunícate con nosotros para consultar y solicitar una cotización.</p>
+        <a href="/contacto" class="mt-4 inline-block rounded-lg bg-acento px-5 py-3 font-bold text-industrial no-underline">Contáctanos</a>
+    </section>
+</main>
+<footer class="bg-industrial text-blanco">
+    <div class="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-6 sm:px-6 md:flex-row md:items-start md:justify-between md:gap-8">
+        <div><p class="font-bold">Estructuras Metálicas J. Cruzado</p><address class="not-italic">Rioja, San Martín, Perú.</address></div>
+        <p class="text-sm">Fabricación y trabajos de estructuras metálicas.</p>
+    </div>
+</footer>
+</body>
 </html>
-
-<style>
-    /* ESTILOS GENERALES */
-    body {
-        margin: 0;
-        background-color: #FFFFFF;
-        color: #1F2937;
-        font-family: Arial, sans-serif;
-        font-size: 1.0625rem;
-        line-height: 1.6;
-    }
-
-    /* TÍTULOS */
-    h1,
-    h2,
-    h3 {
-        font-family: Georgia, serif;
-        color: #F59E0B;
-    }
-
-    /* CABECERA */
-    header {
-        background-color: #1F2937;
-        padding: 1rem 1.5rem;
-    }
-
-    header a {
-        color: #FFFFFF;
-        font-weight: 600;
-        text-decoration: none;
-    }
-
-    nav ul {
-        list-style: none;
-        padding: 0;
-    }
-
-    nav li {
-        display: inline-block;
-        margin-right: 15px;
-    }
-
-    /* ENLACES */
-    a {
-        color: #F59E0B;
-    }
-
-    header a {
-        color: #FFFFFF;
-    }
-
-    /* CONTENIDO */
-    main {
-        max-width: 48rem;
-        margin: 0 auto;
-        padding: 2rem 1.5rem;
-    }
-
-    /* GALERÍA */
-    .galeria {
-        padding: 30px 20px;
-        text-align: center;
-    }
-
-    .contenedor-fotos {
-        display: block;
-        margin-top: 25px;
-    }
-
-    .contenedor-fotos figure {
-        margin: 0 0 20px;
-        padding: 12px;
-        background: #F4F4F4;
-        border-radius: 10px;
-    }
-
-    .contenedor-fotos img {
-        display: block;
-        width: 100%;
-        height: 240px;
-        object-fit: cover;
-        border-radius: 8px;
-    }
-
-    .contenedor-fotos figcaption {
-        margin-top: 10px;
-        font-weight: bold;
-    }
-
-    /* BOTÓN */
-    .boton {
-        display: inline-block;
-        padding: 0.75rem 1.5rem;
-        border: 2px solid #F59E0B;
-        border-radius: 999px;
-        margin-top: 1rem;
-        background-color: #F59E0B;
-        color: #1F2937;
-        font-weight: 600;
-        text-decoration: none;
-    }
-
-    /* PIE DE PÁGINA */
-    footer {
-        padding: 1.5rem;
-        background-color: #1F2937;
-        color: #FFFFFF;
-        text-align: center;
-    }
-
-    img {
-        max-width: 100%;
-        height: auto;
-    }
-</style>
