@@ -2,10 +2,26 @@
 import Layout from '../layouts/Layout.astro';
 import Tarjeta from '../components/Tarjeta.astro';
 import { productos } from '../data/productos.js';
+import { Image } from 'astro:assets';
+import fotoTrabajos from '../assets/trabajos.jpg.jpeg';
 ---
 <Layout title="Servicios | Estructuras Metálicas J. Cruzado" description="Servicios de fabricación y trabajos de metal de Estructuras Metálicas J. Cruzado." pagina="/servicios">
 <main class="mx-auto max-w-6xl px-4 py-10 sm:px-6 md:py-16">
     <section class="mb-10"><h1 class="mb-3 text-4xl font-bold text-acento sm:text-5xl">Nuestros servicios</h1><p class="text-lg">Conoce nuestros trabajos de fabricación e instalación de estructuras metálicas en Rioja, San Martín.</p></section>
+    <section class="mb-12">
+        <h2 class="mb-4 text-2xl font-bold text-acento">Galería de trabajos</h2>
+        <p class="mb-5">Observa uno de nuestros trabajos de fabricación e instalación. Pulsa la imagen para verla en grande.</p>
+        <button id="abrir-foto" type="button" class="block max-w-2xl overflow-hidden rounded-2xl text-left shadow-lg focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-acento">
+            <Image src={fotoTrabajos} alt="Trabajo de fabricación e instalación de estructuras metálicas" width={800} class="w-full object-cover" />
+            <span class="sr-only">Ampliar fotografía del trabajo</span>
+        </button>
+        <dialog id="foto-grande" class="m-auto max-w-4xl rounded-2xl p-0 backdrop:bg-industrial/80">
+            <Image src={fotoTrabajos} alt="Vista ampliada de un trabajo de fabricación e instalación de estructuras metálicas" width={1400} class="max-h-[80vh] w-full object-contain" />
+            <form method="dialog" class="bg-blanco p-4 text-right">
+                <button type="submit" class="rounded-lg bg-industrial px-5 py-2 font-bold text-blanco">Cerrar</button>
+            </form>
+        </dialog>
+    </section>
     <section class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {productos.map((producto) => (
             <Tarjeta
@@ -34,3 +50,11 @@ import { productos } from '../data/productos.js';
     </section>
 </main>
 </Layout>
+<script>
+    const abrir = document.getElementById('abrir-foto');
+    const foto = document.getElementById('foto-grande');
+
+    abrir.addEventListener('click', () => {
+        foto.showModal();
+    });
+</script>

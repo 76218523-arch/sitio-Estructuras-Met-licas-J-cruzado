@@ -8,17 +8,26 @@ const enlaces = [
 ];
 ---
 <header class="bg-industrial text-blanco">
-    <div class="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+    <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-x-4 px-4 py-4 sm:px-6">
         <a href="/" class="text-xl font-bold text-blanco no-underline sm:text-2xl">Estructuras Metálicas J. Cruzado</a>
-        <nav aria-label="Menú principal">
-            <ul class="flex flex-wrap gap-x-5 gap-y-2 p-0">
+        <button
+            id="boton-menu"
+            type="button"
+            aria-expanded="false"
+            aria-controls="menu-principal"
+            class="rounded-lg border-2 border-acento px-5 py-2 font-semibold text-acento hover:bg-acento hover:text-industrial md:hidden"
+        >
+            Menú
+        </button>
+        <nav aria-label="Menú principal" class="w-full md:w-auto">
+            <ul id="menu-principal" class="hidden pt-3 md:flex md:gap-6 md:pt-0">
                 {enlaces.map((enlace) => (
                     <li>
                         <a
                             href={enlace.href}
                             aria-current={pagina === enlace.href ? 'page' : undefined}
                             class:list={[
-                                'font-semibold no-underline hover:text-acento',
+                                'block py-3 font-semibold no-underline hover:text-acento md:py-0',
                                 pagina === enlace.href
                                     ? 'text-acento underline underline-offset-4'
                                     : 'text-blanco',
@@ -32,3 +41,21 @@ const enlaces = [
         </nav>
     </div>
 </header>
+<script>
+    const boton = document.getElementById('boton-menu');
+    const menu = document.getElementById('menu-principal');
+
+    boton.addEventListener('click', () => {
+        const abierto = boton.getAttribute('aria-expanded') === 'true';
+        boton.setAttribute('aria-expanded', abierto ? 'false' : 'true');
+        menu.classList.toggle('hidden');
+    });
+
+    document.addEventListener('keydown', (evento) => {
+        if (evento.key === 'Escape' && boton.getAttribute('aria-expanded') === 'true') {
+            boton.setAttribute('aria-expanded', 'false');
+            menu.classList.add('hidden');
+            boton.focus();
+        }
+    });
+</script>
